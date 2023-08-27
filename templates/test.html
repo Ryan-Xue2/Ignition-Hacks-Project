@@ -1,17 +1,32 @@
 <!DOCTYPE html>
 
 <html>
+    <head>
+        {% include 'styles.html' %}
+        <title>Test Yourself!</title>
+    </head>
 
-<head>
-    {% include 'styles.html' %}
-    <title>Test Yourself!</title>
-</head>
-
-<body>
-    {% include 'menu.html' %}
-
-    <h1>Test Yourself!</h1>
-    <p>{{questions}}</p>
-</body>
-
+    <body>
+        {% include 'menu.html' %}
+        
+        <h1>Test Yourself!</h1>
+        <hr>
+        <p>
+            Your options to fill in the blanks are: <br>
+            {% for answer in answers | uniqueshuffle %}
+                {{answer}} · 
+            {% endfor %}
+        </p>
+        <hr>
+        <p>{{questions}}</p>
+        
+        <form method="POST" action="/results">
+            {% for i in range(answers | length) %}
+                {{i+1}}. 
+                <input type="text" name="{{i}}"><br>
+            {% endfor %}
+            <br>
+            <input type="submit" value="Submit Your Answers">
+        </form>
+    </body>
 </html>
