@@ -8,9 +8,18 @@
     <body>
         {% include 'menu.html' %}
         <h1>Your last quiz results:</h1>
+        {{quiz}}
         <h3>Grade: {{grade}} / {{feedback | length}}</h3>
         <p>
-            
+            {% for i in range(feedback | length) %}
+                Question {{i+1}}. <input type="text" value="{{user_answers[i]}}" disabled="disabled">
+                {% if feedback[i] == 'Correct!' %}
+                    <div style="color:green">{{feedback[i]}}</div>
+                {% else %}
+                    <div style="color:red">{{feedback[i]}}</div>
+                {% endif %}
+                <br>
+            {% endfor %}
         </p>
     </body>
 </html>

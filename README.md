@@ -1,7 +1,1 @@
-idea is to fine tune chat-gpt's api to create a quick test for users after they read an article through a chrome extension or something
-makes students retain information better after reading an article or something
-ideally will use very few chat gpt api calls, since they cost money, or no chat gpt at all even
-maybe some other ml technique
-
-too hard
-using keyword extraction now
+Idea was to fine tune LLMs to optimize them for creating good test questions from some text like course material or the drivers handbook. Ended up running out of time, so I used keyword extraction to create fill-in-the-blank quizzes instead. Goal is to improve studying and information retention by testing oneself.
