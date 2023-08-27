@@ -2,14 +2,18 @@
 <html>
 
 <head>
+    {% include 'styles.html' %}
     <title>Tester 3000</title>
+
 </head>
 <body>
-    <h1>TESTER 3000</h1>
+    {% include 'menu.html' %}
+    <h1>Create a Test</h1>
     <form action="/test" method="POST">
         <p>
-            Test material:
-            <input type="text" name="info">
+            Course material:<br>
+            <textarea id="info" name="info" rows="10" cols="100"></textarea><br>
+            <input type="submit" value="Create ">
         </p>
     </form>
 </body>
